@@ -8,7 +8,10 @@ import {
     Login,
     SignUp,
     Profile,
-    DriverDetails
+    DriverDetails,
+    RequestAService,
+    DriveHome,
+    CompleteJobs
 } from './../Screens/index'
 const Stack = createStackNavigator();
 function StackNavigation() {
@@ -18,7 +21,10 @@ function StackNavigation() {
                 {/* <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}/>
                 <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }}/>
                 <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }}/> */}
-                <Stack.Screen name="DriverDetails" component={DriverDetails} options={{ headerShown: false }}/>
+                {/* <Stack.Screen name="DriverDetails" component={DriverDetails} options={{ headerShown: false }}/> */}
+                {/* <Stack.Screen name="RequestAService" component={RequestAService} options={{ headerShown: false }}/> */}
+                <Stack.Screen name="DriveHome" component={DriveHome} options={{ headerShown: false }}/>
+                <Stack.Screen name="CompleteJobs" component={CompleteJobs} options={{ headerShown: false }}/>
             </Stack.Navigator>
         </NavigationContainer>
     );
