@@ -48,7 +48,7 @@ export default function UserProfile(props) {
 
         {/* =====================> <===================== */}
         <View style={styles._main}>
-          <TouchableOpacity style={styles._different_pages}>
+          <TouchableOpacity style={styles._different_pages} onPress={() => props.navigation.navigate("RequestAService")}>
             <Ionicons name="git-pull-request" size={24} color="white" />
             <Text style={styles._different_pages_text}>Request a Service</Text>
           </TouchableOpacity>
@@ -76,7 +76,7 @@ export default function UserProfile(props) {
             <Text style={styles._different_pages_text2}>Privacy Policy</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles._different_pages2}>
+          <TouchableOpacity style={styles._different_pages2} onPress={() => props.navigation.navigate("Login")}>
             <Text style={styles._different_pages_text2}>Log Out</Text>
           </TouchableOpacity>
         </View>

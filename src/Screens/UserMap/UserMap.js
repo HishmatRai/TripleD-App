@@ -70,7 +70,7 @@ export default function UserMap(props) {
           {/* =====================> <===================== */}
           <TouchableOpacity
             style={styles._continue_btn}
-            // onPress={() => props.navigation.navigate("Profile")}
+            onPress={() => props.navigation.navigate("UserProfile")}
           >
             <Text style={styles._continue_btn_txt}>CANCEL</Text>
           </TouchableOpacity>

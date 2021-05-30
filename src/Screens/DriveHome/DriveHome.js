@@ -41,7 +41,7 @@ export default function DriveHome(props) {
 
             {/* =====================> <===================== */}
             <View style={styles._header_main}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => props.navigation.navigate("DriverProfile")}>
                     <Entypo name="menu" size={30} color="white" />
                 </TouchableOpacity>
                 <TouchableOpacity>
@@ -119,7 +119,7 @@ export default function DriveHome(props) {
                                                     <Text style={{ color: "white", fontSize: 13 }}>Pickup Location</Text>
                                                     <Text style={{ color: "white", fontSize: 16, fontWeight: "bold" }}>Fresh Market</Text>
                                                 </View>
-                                                <TouchableOpacity style={styles._ignore_btn}>
+                                                <TouchableOpacity style={styles._ignore_btn} onPress={() => props.navigation.navigate("DriverMap")}>
                                                     <Text style={styles._ignore_btn_text}>Ignore</Text>
                                                 </TouchableOpacity>
                                             </View>
@@ -128,7 +128,7 @@ export default function DriveHome(props) {
                                                     <Text style={{ color: "white", fontSize: 13 }}>Destination Location</Text>
                                                     <Text style={{ color: "white", fontSize: 16, fontWeight: "bold" }}>My Home</Text>
                                                 </View>
-                                                <TouchableOpacity style={styles._accept_btn}>
+                                                <TouchableOpacity style={styles._accept_btn} onPress={() => props.navigation.navigate("DriverMap")}> 
                                                     <Text style={styles._accept_btn_text}>Accept</Text>
                                                 </TouchableOpacity>
                                             </View>

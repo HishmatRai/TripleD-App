@@ -179,12 +179,12 @@ export default function DispatcherPendingRequestTwo(props) {
                       </View>
 
                       <View style={styles._buttons_main}>
-                        <TouchableOpacity style={styles._assign_driver_btn}>
+                        <TouchableOpacity style={styles._assign_driver_btn} onPress={() => props.navigation.navigate("DispatcherCompletedJobs")}>
                           <Text style={styles._assign_driver_btn_text}>
                             Assign Driver
                           </Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles._assign_driver_btn}>
+                        <TouchableOpacity style={styles._assign_driver_btn} onPress={() => props.navigation.navigate("DriversNearByYou")}>
                           <Text style={styles._assign_driver_btn_text}>
                             Assign Vehicle
                           </Text>

@@ -95,7 +95,7 @@ export default function DriverMap(props) {
           {/* =====================> <===================== */}
           <TouchableOpacity
             style={styles._continue_btn}
-            // onPress={() => props.navigation.navigate("Profile")}
+            onPress={() => props.navigation.navigate("DriverThankyou")}
           >
             <Text style={styles._continue_btn_txt}>Start</Text>
           </TouchableOpacity>

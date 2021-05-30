@@ -9,8 +9,11 @@ import {
   TextInput,
 } from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 export default function SignUp(props) {
   const [activeBtn, setActiveBtn] = useState(0);
+  console.log("====>",activeBtn);
+  const [selectedValue, setSelectValue] = useState("");
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
@@ -32,6 +35,15 @@ export default function SignUp(props) {
     { heading: "Driver" },
     { heading: "Dispatcher" },
   ];
+  
+  const handler_signup = async (value) => {
+    try {
+      await AsyncStorage.setItem("user", JSON.stringify(activeBtn));
+        props.navigation.navigate("Login");
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
   return (
     <View style={styles.container}>
       {/* =====================> <===================== */}
@@ -211,7 +223,7 @@ export default function SignUp(props) {
           </View>
 
           {/* =====================> <===================== */}
-          <TouchableOpacity style={styles._continue_btn} onPress={() => props.navigation.navigate("Login")}>
+          <TouchableOpacity style={styles._continue_btn} onPress={() => handler_signup()}>
             <Text style={styles._continue_btn_txt}>SIGN UP</Text>
           </TouchableOpacity>
         </View>

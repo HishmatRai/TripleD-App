@@ -109,7 +109,7 @@ export default function DriversNearByYou(props) {
                   </View>
 
                   {/* =====================> <===================== */}
-                  <TouchableOpacity style={styles._assign_btn}>
+                  <TouchableOpacity style={styles._assign_btn} onPress={() => props.navigation.navigate("AssignDriverConfirm")}>
                     <Text style={styles._assign_btn_text}>Assign Driver</Text>
                   </TouchableOpacity>
                 </View>

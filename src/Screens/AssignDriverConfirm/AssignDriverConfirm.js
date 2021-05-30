@@ -184,7 +184,7 @@ export default function AssignDriverConfirm(props) {
                     <Text style={styles._code}>H32KHS</Text>
                   </View>
                    {/* =====================> <===================== */}
-          <TouchableOpacity style={styles._continue_btn} onPress={() => props.navigation.navigate("Profile")}>
+          <TouchableOpacity style={styles._continue_btn} onPress={() => props.navigation.navigate("DispatcherThanks")}>
             <Text style={styles._continue_btn_txt}>Confirm</Text>
           </TouchableOpacity>
                 </View>

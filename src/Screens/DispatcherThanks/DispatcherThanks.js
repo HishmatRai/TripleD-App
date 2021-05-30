@@ -24,7 +24,7 @@ export default function DispatcherThanks(props) {
         <Text style={styles._des}>
         Your service has been sent to client.
         </Text>
-        <TouchableOpacity style={styles._ok_btn}>
+        <TouchableOpacity style={styles._ok_btn} onPress={() => props.navigation.navigate("DispatcherPendingRequest")}>
             <Text style={styles._ok_btn_text}>OKAY</Text>
         </TouchableOpacity>
       </View>

@@ -41,7 +41,7 @@ export default function CompleteJobs(props) {
 
             {/* =====================> <===================== */}
             <View style={styles._header_main}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => props.navigation.navigate("DriverProfile")}>
                     <Entypo name="menu" size={30} color="white" />
                 </TouchableOpacity>
                 <TouchableOpacity>

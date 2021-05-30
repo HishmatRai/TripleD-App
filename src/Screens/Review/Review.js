@@ -96,7 +96,7 @@ export default function Review(props) {
             {/* =====================> <===================== */}
             <TouchableOpacity
               style={styles._continue_btn}
-              // onPress={() => props.navigation.navigate("Profile")}
+              onPress={() => props.navigation.goBack()}
             >
               <Text style={styles._continue_btn_txt}>SUBMIT RATING</Text>
             </TouchableOpacity>

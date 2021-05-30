@@ -8,11 +8,27 @@ import {
   TouchableOpacity,
   TextInput,
 } from "react-native";
-import {
-  MaterialCommunityIcons,
-} from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 export default function Login(props) {
   const [remember, setRemember] = useState(true);
+
+  const handler_Login = async () => {
+    try {
+      var userValue = await AsyncStorage.getItem("user");
+      userValue = JSON.parse(userValue);
+      console.log("---------->", userValue)
+      if (userValue === 0) {
+        props.navigation.navigate("UserProfile");
+      } else if (userValue === 1) {
+        props.navigation.navigate("DriveHome");
+      } else if (userValue === 2) {
+        props.navigation.navigate("DispatcherPendingRequest");
+      }
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
   return (
     <View style={styles.container}>
       {/* =====================> <===================== */}
@@ -28,10 +44,16 @@ export default function Login(props) {
         <View style={styles._main}>
           {/* =====================> <===================== */}
           <View style={styles._header_main}>
-            <TouchableOpacity style={styles._header_signin_btn} onPress={() => props.navigation.navigate("Login")}>
+            <TouchableOpacity
+              style={styles._header_signin_btn}
+              onPress={() => props.navigation.navigate("Login")}
+            >
               <Text style={styles._header_signin_btn_text}>SIGN IN</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles._header_sigup_btn} onPress={() => props.navigation.navigate("SignUp")}>
+            <TouchableOpacity
+              style={styles._header_sigup_btn}
+              onPress={() => props.navigation.navigate("SignUp")}
+            >
               <Text style={styles._header_signin_btn_text}>SIGN UP</Text>
             </TouchableOpacity>
           </View>
@@ -83,7 +105,10 @@ export default function Login(props) {
           </View>
 
           {/* =====================> <===================== */}
-          <TouchableOpacity style={styles._continue_btn} onPress={() => props.navigation.navigate("Profile")}>
+          <TouchableOpacity
+            style={styles._continue_btn}
+            onPress={() => handler_Login()}
+          >
             <Text style={styles._continue_btn_txt}>CONTINUE</Text>
           </TouchableOpacity>
         </View>
@@ -170,13 +195,13 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginTop: 50,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
   _continue_btn_txt: {
     color: "white",
     fontSize: 15,
     fontWeight: "bold",
     letterSpacing: 1,
-    paddingVertical: 15
-  }
+    paddingVertical: 15,
+  },
 });

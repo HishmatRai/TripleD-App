@@ -25,7 +25,7 @@ export default function DriverThankyou(props) {
           Thank you for registering with YelowTaxi. Please complete your
           registration and be activated by visiting our office.
         </Text>
-        <TouchableOpacity style={styles._ok_btn}>
+        <TouchableOpacity style={styles._ok_btn} onPress={() => props.navigation.navigate("DriveHome")}>
             <Text style={styles._ok_btn_text}>OKAY</Text>
         </TouchableOpacity>
       </View>
