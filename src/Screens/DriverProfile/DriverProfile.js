@@ -9,8 +9,8 @@ import {
   ImageBackground,
   Image,
 } from "react-native";
-import { Feather, Ionicons,AntDesign,MaterialIcons ,FontAwesome5} from "@expo/vector-icons";
-export default function Profile(props) {
+import { Feather, Ionicons,AntDesign,MaterialIcons ,FontAwesome5,FontAwesome} from "@expo/vector-icons";
+export default function DriverProfile(props) {
   return (
     <View style={styles.container}>
       {/* =====================> <===================== */}
@@ -49,18 +49,23 @@ export default function Profile(props) {
         {/* =====================> <===================== */}
         <View style={styles._main}>
           <TouchableOpacity style={styles._different_pages}>
-            <Ionicons name="git-pull-request" size={24} color="white" />
-            <Text style={styles._different_pages_text}>Request a Service</Text>
+            <FontAwesome name="vcard" size={24} color="white" />
+            <Text style={styles._different_pages_text}>My Profile</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles._different_pages}>
-          <AntDesign name="calendar" size={24} color="white" />
-            <Text style={styles._different_pages_text}>My Bookings</Text>
+          <FontAwesome5 name="car-alt" size={24} color="white" />
+            <Text style={styles._different_pages_text}>My Vehicle</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles._different_pages}>
-          <MaterialIcons name="track-changes" size={24} color="white" />
-            <Text style={styles._different_pages_text}>Track My Request</Text>
+          <Ionicons name="ios-document-text-sharp" size={24} color="white" />
+            <Text style={styles._different_pages_text}>Personal Documents</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles._different_pages}>
+          <MaterialIcons name="lock-open" size={24} color="white" />
+            <Text style={styles._different_pages_text}>Change Password</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles._different_pages}>
